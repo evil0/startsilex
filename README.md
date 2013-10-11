@@ -1,4 +1,4 @@
-startsilex
+startSilex
 ==========
 Is Silex With:
 
