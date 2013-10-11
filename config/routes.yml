@@ -1,0 +1,5 @@
+home:
+    path: /
+    defaults:
+        _controller: 'AppController::homeAction'
+        name: 'home'

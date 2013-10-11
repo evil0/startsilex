@@ -1,0 +1,22 @@
+{
+    "require": {
+        "silex/silex": "1.*",
+        "symfony/locale": "~2.3",
+        "symfony/validator": "~2.3",
+        "symfony/config": "~2.3",
+        "symfony/translation": "~2.3",
+        "symfony/form": "~2.3",
+        "symfony/yaml":"~2.3",
+        "symfony/browser-kit": ">=2.3,<2.4-dev",
+        "deralex/yaml-config-service-provider": "1.0.x-dev",
+        "symfony/dependency-injection": "v2.3.5",
+        "silex/web-profiler": "1.0.*@dev",
+		"doctrine/dbal": ">=2.2.0,<2.4.0-dev",
+		"twig/twig": ">=1.8,<2.0-dev",
+		"symfony/twig-bridge": "~2.3",
+        "monolog/monolog": ">=1.0.0"
+    },
+	 "autoload": {
+        "psr-0": {"": "libs/"}
+    }
+}

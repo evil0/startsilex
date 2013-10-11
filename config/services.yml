@@ -1,0 +1,7 @@
+services:
+
+    silex.app:
+      class: Silex\Application
+    database:
+      class: Custom\Database
+      arguments: ['@silex.app','@service_container']

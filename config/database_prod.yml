@@ -1,0 +1,6 @@
+database:
+    driver: pdo_mysql
+    host: localhost
+    dbname: name
+    user: root
+    password: admin
