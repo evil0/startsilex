@@ -1,6 +1,6 @@
 {
     "require": {
-        "silex/silex": "1.*",
+        "silex/silex": "~1.1",
         "symfony/locale": "~2.3",
         "symfony/validator": "~2.3",
         "symfony/config": "~2.3",

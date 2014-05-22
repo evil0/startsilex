@@ -13,6 +13,7 @@ Is Silex With:
         <li>Class as services</li>
         <li>Monolog</li>
         <li>PHPUnit ready (see tests/)</li>
+        <li>CORS Ready</li>
 </ul>
 
 Install
