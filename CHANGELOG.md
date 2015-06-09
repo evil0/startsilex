@@ -10,6 +10,6 @@
 
 ## Bug Fixes
 
-- **monolog:** fixed .gitignore for development.log
-
+- **monolog:**: fixed .gitignore for development.log
+- **monolog**: fixed boring development.log permission error (see composer.json)
 

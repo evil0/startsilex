@@ -19,5 +19,8 @@
     },
     "autoload": {
         "psr-0": {"": "src/"}
+    },
+    "scripts": {
+        "post-install-cmd": "touch development.log && chmod 777 development.log"
     }
 }
