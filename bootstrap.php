@@ -48,7 +48,7 @@ $app->register(new Provider\TwigServiceProvider(), array(
 
 /* If we are on development environment,
  * do the toolbar !
- */
+
 
 if($app['env'] == 'dev') {
     $app->register(new Provider\WebProfilerServiceProvider(), array(
@@ -56,7 +56,7 @@ if($app['env'] == 'dev') {
         'profiler.mount_prefix' => '/_profiler', // this is the default
     ));
 }
-
+ */
 $app->register(new Provider\ServiceControllerServiceProvider());
 $app->register(new Provider\UrlGeneratorServiceProvider());
 $app->register(new Silex\Provider\MonologServiceProvider(), array(

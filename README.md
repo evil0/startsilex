@@ -12,6 +12,7 @@ Is Silex With:
         <li>Routes as controllers</li>
         <li>Class as services</li>
         <li>Monolog</li>
+        <li>Entity Builder and Mappers</li>
         <li>PHPUnit ready (see tests/)</li>
         <li>CORS Ready</li>
 </ul>

@@ -3,5 +3,8 @@ services:
     silex.app:
       class: Silex\Application
     database:
-      class: Custom\Database
+          class: Services\Database
+          arguments: ['@silex.app','@service_container']
+    mapper.foo:
+      class: Services\Mapper\FooMapper
       arguments: ['@silex.app','@service_container']

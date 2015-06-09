@@ -1,6 +1,6 @@
 <?php
 
-namespace Custom;
+namespace Services;
 
 use Silex\Application;
 use Symfony\Component\DependencyInjection\Container;
