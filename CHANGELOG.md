@@ -1,3 +1,15 @@
+# 1.3.1 (2015-06-11)
+
+## New features
+
+- **symfony**: added app/console capability (see Services/Command for a usage example)
+
+
+## Bug Fixes
+
+- **symfony**: removed deprecated istruction _method in routes.yml
+
+
 # 1.3.0 (2015-06-09)
 
 ## New features
@@ -10,6 +22,6 @@
 
 ## Bug Fixes
 
-- **monolog:**: fixed .gitignore for development.log
+- **monolog**: fixed .gitignore for development.log
 - **monolog**: fixed boring development.log permission error (see composer.json)
 

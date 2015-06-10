@@ -12,6 +12,7 @@ use Symfony\Component\Routing\Loader\YamlFileLoader;
 use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader as ContainerYamlLoader;
+use Knp\Provider\ConsoleServiceProvider;
 
 $container = new ContainerBuilder();
 $container->setParameter("ROOT_PATH", dirname(__DIR__));
@@ -62,6 +63,15 @@ $app->register(new Provider\UrlGeneratorServiceProvider());
 $app->register(new Silex\Provider\MonologServiceProvider(), array(
     'monolog.logfile' => __DIR__.'/development.log',
 ));
+
+$app->register(
+    new ConsoleServiceProvider(),
+    array(
+        'console.name' => 'startSilexConsole',
+        'console.version' => '1.3.0',
+        'console.project_directory' => __DIR__ . "/.."
+    )
+);
 
 $conn = $app['db'] = $app['dbs'][$app['env']];
 $app['debug'] = $app['env'] == 'prod' ? false : true;

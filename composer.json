@@ -15,10 +15,11 @@
         "doctrine/dbal":  "~2.2",
         "twig/twig": ">=1.8,<2.0-dev",
         "symfony/twig-bridge": "~2.3,<3.0",
-        "monolog/monolog": "~1.4,>=1.4.1"
+        "monolog/monolog": "~1.4,>=1.4.1",
+        "knplabs/console-service-provider": "dev-master"
     },
     "autoload": {
-        "psr-0": {"": "src/"}
+        "psr-4": {"": "src/"}
     },
     "scripts": {
         "post-install-cmd": "touch development.log && chmod 777 development.log"

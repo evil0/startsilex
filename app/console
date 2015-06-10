@@ -1,0 +1,10 @@
+#!/usr/bin/env php
+<?php
+
+set_time_limit(0);
+
+$app = require_once dirname(__DIR__) ."/bootstrap.php";
+
+$console = &$app["console"];
+$console->add(new \Services\Command\ExampleCommand());
+$console->run();
