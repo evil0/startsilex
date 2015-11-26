@@ -73,6 +73,23 @@ $app->register(
     )
 );
 
+/* Controllers dependency inijection */
+foreach(glob('src/Controller/*.php', GLOB_BRACE) as $file) {
+
+    $file = str_replace(".php","", array_pop(explode("/", $file)));
+    $controllerName = preg_replace(
+        '/(^|[a-z])([A-Z])/e',
+        'strtolower(strlen("\\1") ? "\\1.\\2" : "\\2")',
+        $file
+    );
+
+    $className = "Controller\\{$file}";
+    $app[$controllerName] = $app->share(function ($app) use ($className) {
+        return new $className($app);
+    });
+
+}
+
 $conn = $app['db'] = $app['dbs'][$app['env']];
 $app['debug'] = $app['env'] == 'prod' ? false : true;
 

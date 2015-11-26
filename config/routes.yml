@@ -1,5 +1,5 @@
 home:
     path: /
     defaults:
-        _controller: 'Controller\AppController::homeAction'
+        _controller: 'app.controller:homeAction'
         name: 'home'

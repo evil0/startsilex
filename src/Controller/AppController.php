@@ -8,14 +8,14 @@ use Silex\Application;
 
 /* To call the container use $app['container'] */
 
-class AppController
+class AppController extends BaseController
 {
-    public function homeAction(Application $app)
+    public function homeAction()
     {
-        $foo = $app["container"]->get("mapper.foo")->create();
+        $foo = $this->app["container"]->get("mapper.foo")->create();
         $foo->setName("Marco (evil0) Costantino");
 
-        return $app['twig']->render('index.html.twig', array("author" => $foo->getName()));
+        return $this->app['twig']->render('index.html.twig', array("author" => $foo->getName()));
     }
 
 }
