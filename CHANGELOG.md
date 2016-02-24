@@ -4,6 +4,10 @@
 
 - **entities**: console entities:generate stub (generates entities from db tables)
 
+## Breaking changes
+
+- **support**: dropped support to php 5.4
+
 # 1.3.1 (2015-06-11)
 
 ## New features
