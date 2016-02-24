@@ -7,4 +7,5 @@ $app = require_once dirname(__DIR__) ."/bootstrap.php";
 
 $console = &$app["console"];
 $console->add(new \Services\Command\ExampleCommand());
+$console->add(new \Services\Command\EntityGeneratorCommand());
 $console->run();

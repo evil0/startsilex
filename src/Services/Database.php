@@ -18,7 +18,17 @@ class Database
 
         $this->container = $container;
         $this->conn = $app['db'];
+        $this->app = $app;
 
+    }
+
+
+    public function getTables() {
+        return $this->conn->executeQuery("SELECT table_name as name FROM INFORMATION_SCHEMA.TABLES  WHERE table_schema = '".$this->app['config']['database']["dbname"]."'")->fetchAll();
+    }
+
+    public function getColumns($tableName) {
+        return  $this->conn->executeQuery("SELECT COLUMN_NAME as name FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA =  '".$this->app['config']['database']["dbname"]."' AND TABLE_NAME = '".$tableName."'")->fetchAll();
     }
 
     public function insert($table, $insert_array) {
