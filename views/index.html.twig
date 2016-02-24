@@ -1,107 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>startSilex</title>
-    <style>
-        ::-moz-selection {
-            background: #b3d4fc;
-            text-shadow: none;
-        }
+{% extends "layout.html.twig" %}
 
-        ::selection {
-            background: #b3d4fc;
-            text-shadow: none;
-        }
+{% block title %}Costituzione società | Home page{% endblock %}
+{% block meta_desc %}Costituzione società{% endblock %}
+{% block head %}
+    {{ parent() }}
+{% endblock %}
 
-        html {
-            padding: 30px 10px;
-            font-size: 20px;
-            line-height: 1.4;
-            color: #737373;
-            background: #f0f0f0;
-            -webkit-text-size-adjust: 100%;
-            -ms-text-size-adjust: 100%;
-        }
+{% block body %}
 
-        html,
-        input {
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        }
+    {#
 
-        body {
-            max-width: 500px;
-            _width: 500px;
-            padding: 30px 20px 50px;
-            border: 1px solid #b3b3b3;
-            border-radius: 4px;
-            margin: 0 auto;
-            box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
-            background: #fcfcfc;
-        }
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Home page</h1>
+        </div>
+    </div>
 
-        h1 {
-            margin: 0 10px;
-            font-size: 50px;
-            text-align: center;
-        }
+    #}
 
-        h1 span {
-            color: #bbb;
-        }
 
-        h3 {
-            color: #bbb;
-            margin: 1.5em 0 0.5em;
-        }
+    <div class="container">
+        <h1>start<span>Silex</span></h1>
+        is silex with:
+        <ul style="text-align: left;">
+            <li>Twig</li>
+            <li>Doctrine DBAL</li>
+            <li>Symfony Form</li>
+            <li>Symfony Dependency Injection</li>
+            <li>Symfony YAML Config</li>
+            <li>Web Profiler</li>
+            <li>Routes as controllers</li>
+            <li>Class as services</li>
+            <li>Monolog</li>
+            <li>Entity Builder and Mappers</li>
+            <li>Symfony Console</li>
+            <li>PHPUnit ready (see tests/)</li>
+            <li>CORS Ready</li>
+        </ul>
 
-        h3 a {
-            text-decoration: none;
-            color: #737373;
-        }
-        p {
-            margin: 1em 0;
-        }
-
-        ul {
-            padding: 0 0 0 40px;
-            margin: 1em 0;
-        }
-
-        .container {
-            max-width: 380px;
-            _width: 380px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        input::-moz-focus-inner {
-            padding: 0;
-            border: 0;
-        }
-    </style>
-</head>
-<body>
-<div class="container">
-    <h1>start<span>Silex</span></h1>
-    is silex with:
-    <ul style="text-align: left;">
-        <li>Twig</li>
-        <li>Doctrine DBAL</li>
-        <li>Symfony Form</li>
-        <li>Symfony Dependency Injection</li>
-        <li>Symfony YAML Config</li>
-        <li>Web Profiler</li>
-        <li>Routes as controllers</li>
-        <li>Class as services</li>
-        <li>Monolog</li>
-        <li>Entity Builder and Mappers</li>
-        <li>Symfony Console</li>
-        <li>PHPUnit ready (see tests/)</li>
-        <li>CORS Ready</li>
-    </ul>
-
-    <h3>by <a href="http://evil0.github.io" target="_blank">{{ author }}</a></h3>
-</div>
-</body>
-</html>
+        <h3>by <a href="http://evil0.github.io" target="_blank">{{ author }}</a></h3>
+    </div>
+{% endblock %}
