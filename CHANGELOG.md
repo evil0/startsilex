@@ -1,3 +1,9 @@
+# 1.3.3 (2016-04-21)
+
+## New features
+
+- **php**: full compatibility with php 7.0
+
 # 1.3.2 (2016-02-24)
 
 ## New features

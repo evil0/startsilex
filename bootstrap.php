@@ -77,12 +77,13 @@ $app->register(
 foreach(glob('src/Controller/*.php', GLOB_BRACE) as $file) {
 
     $file = str_replace(".php","", array_pop(explode("/", $file)));
-    $controllerName = preg_replace(
-        '/(^|[a-z])([A-Z])/e',
-        'strtolower(strlen("\\1") ? "\\1.\\2" : "\\2")',
+    $controllerName = preg_replace_callback(
+        '/(^|[a-z])([A-Z])/',
+        function($m) {
+            return strtolower(strlen($m[1]) ? $m[1].".".$m[2] : $m[2]);
+        },
         $file
     );
-
     $className = "Controller\\{$file}";
     $app[$controllerName] = $app->share(function ($app) use ($className) {
         return new $className($app);
