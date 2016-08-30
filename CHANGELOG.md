@@ -1,3 +1,9 @@
+# 2.0 (2016-08-30)
+
+## Core update
+
+- **silex**: now startsilex is compatible with silex 2.0
+
 # 1.3.3 (2016-04-21)
 
 ## New features

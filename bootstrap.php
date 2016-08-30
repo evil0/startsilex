@@ -31,7 +31,7 @@ $app['routes'] = $app->extend('routes', function (RouteCollection $routes, Appli
     return $routes;
 });
 
-$app->register(new DerAlex\Silex\YamlConfigServiceProvider(__DIR__ . "/config/database_{$app['env']}.yml"));
+$app->register(new DF\Silex\Provider\YamlConfigServiceProvider(__DIR__ . "/config/database_{$app['env']}.yml"));
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
     'dbs.options' => array( $app['env'] => $app['config']['database'] )
 ));
@@ -39,6 +39,8 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
 $app->register(new Provider\SessionServiceProvider());
 $app->register(new Provider\FormServiceProvider());
 $app->register(new Provider\TranslationServiceProvider(), array(
+    'locale' => 'en',
+    'locale_fallbacks' => array('en'),
     'translator.messages' => array(),
 ));
 
@@ -47,19 +49,7 @@ $app->register(new Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/views',
 ));
 
-/* If we are on development environment,
- * do the toolbar !
-
-
-if($app['env'] == 'dev') {
-    $app->register(new Provider\WebProfilerServiceProvider(), array(
-        'profiler.cache_dir' => __DIR__.'/../cache/profiler',
-        'profiler.mount_prefix' => '/_profiler', // this is the default
-    ));
-}
- */
 $app->register(new Provider\ServiceControllerServiceProvider());
-$app->register(new Provider\UrlGeneratorServiceProvider());
 $app->register(new Silex\Provider\MonologServiceProvider(), array(
     'monolog.logfile' => __DIR__.'/development.log',
 ));
@@ -68,7 +58,7 @@ $app->register(
     new ConsoleServiceProvider(),
     array(
         'console.name' => 'startSilexConsole',
-        'console.version' => '1.3.0',
+        'console.version' => '2.0.0',
         'console.project_directory' => __DIR__ . "/.."
     )
 );
@@ -85,9 +75,9 @@ foreach(glob('src/Controller/*.php', GLOB_BRACE) as $file) {
         $file
     );
     $className = "Controller\\{$file}";
-    $app[$controllerName] = $app->share(function ($app) use ($className) {
+    $app[$controllerName] = function ($app) use ($className) {
         return new $className($app);
-    });
+    };
 
 }
 
